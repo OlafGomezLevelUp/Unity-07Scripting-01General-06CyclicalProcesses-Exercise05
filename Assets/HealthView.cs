@@ -16,12 +16,12 @@ public class HealthView : MonoBehaviour
 
     private void OnEnable()
     {
-        _healthBehavior.HealthChange += OnHealthChange;
+        _healthBehavior.HealtChange.AddListener(OnHealthChange);
     }
 
     private void OnDisable()
     {
-        _healthBehavior.HealthChange -= OnHealthChange;
+        _healthBehavior.HealtChange.RemoveListener(OnHealthChange);
     }
 
     private void OnHealthChange(float health)
